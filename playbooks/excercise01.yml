@@ -7,3 +7,8 @@
       yum:
         name: httpd
         state: present
+    
+    - name: Copy file with owner and permissions
+      copy:
+        src: webfiles/index.html
+        dest: /var/www/html/index.html
