@@ -1,0 +1,18 @@
+all:
+  hosts:
+    node01:
+    node02:
+    node03:
+  children:
+    webservers:
+      hosts:
+        node01:
+        node02:
+    dbservers:
+      hosts:
+        node03:
+    westservers:
+      children:
+        webservers:
+        dbservers:
+        
