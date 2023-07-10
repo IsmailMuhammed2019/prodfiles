@@ -13,27 +13,3 @@
         name: httpd
         state: started
         enabled: yes
-
-    - name: Copy index file
-      copy:
-        src: ../webfiles/index.html
-        dest: /var/www/html/index.html
-        owner: root
-        group: root
-        mode: '0644'
-        backup: yes
-  
-- name: setup DB server
-  hosts: dbservers
-  become: yes
-  tasks:
-    - name: install mariadb
-      yum: 
-        name: mariadb-server
-        state: present
-
-    - name: start & enable dbservers
-      service: 
-        name: mariadb
-        state: started
-        enabled: yes
