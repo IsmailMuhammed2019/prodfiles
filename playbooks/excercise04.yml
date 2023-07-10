@@ -22,3 +22,11 @@
       mysql_db:
         name: accounts
         state: present
+
+    - name: Create database user using hashed password with all database privileges
+      mysql_user:
+        name: bob
+        password: '*EE0D72C1085C46C5278932678FBE2C6A782821B4'
+        encrypted: yes
+        priv: '*.*:ALL'
+        state: present
