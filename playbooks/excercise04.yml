@@ -7,6 +7,11 @@
         name: mariadb-server
         state: present
 
+    - name: Install MySQL-python
+      yum:
+        name: MySQL-python
+        state: present
+
     - name: start & enable dbservers
       service: 
         name: mariadb
@@ -14,6 +19,6 @@
         enabled: yes
 
     - name: Create a new database with name 'accounts'
-        mysql_db:
+      mysql_db:
         name: accounts
         state: present
