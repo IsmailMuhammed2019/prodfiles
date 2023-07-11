@@ -5,7 +5,7 @@
   tasks:
   - name: Install NTP on centos
     yum:
-      name: ntp
+      name: "{{item}}"
       state: present
     when: ansible_distribution == "CentOS"
     loop:
@@ -17,7 +17,7 @@
 
   - name: install NTP on Ubuntu
     apt:
-      name: ntp
+      name: "{{item}}"
       state: present
       update_cache: yes
     when: ansible_distribution == "Ubuntu"
