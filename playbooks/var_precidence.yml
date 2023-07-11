@@ -1,0 +1,17 @@
+---
+- name: Create user on all hosts
+  hosts: all
+  become: yes
+  vars: 
+    USRNM: playUser
+    COMM: variable from playbook
+  tasks: 
+    - name: create user
+      user:
+        name: "{{USRNM}}"
+        comment: "{{COMM}}"
+      register: usrout
+
+    - name: print out the user output
+      debug: 
+        var: usrout
