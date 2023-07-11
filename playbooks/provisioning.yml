@@ -7,3 +7,16 @@
       copy: 
         content: "This {{ansible_distribution}} is managed by Ansible. \n"
         dest: /etc/motd
+
+    - name: Deploy NTP conf file for RedHat
+      template:
+        src: ../templates/ntp_redhat.conf.j2
+        dest: /etc/ntp.conf
+      when: ansible_os_family == "RedHat"
+
+    - name: Restart NTP on RedHat
+      service: 
+        name: ntpd
+        state: restarted
+        enabled: yes
+      when: ansible_os_family == "RedHat"
