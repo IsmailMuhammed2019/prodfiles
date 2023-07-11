@@ -52,4 +52,4 @@
       name: "{{item}}"
       state: present
       groups: devops
-    loop: "{{Usernames}}"
+    loop: "{{usernames}}"
