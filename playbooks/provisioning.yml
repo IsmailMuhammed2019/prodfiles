@@ -20,3 +20,9 @@
         state: restarted
         enabled: yes
       when: ansible_os_family == "RedHat"
+
+    - name: Dir for dev data
+      file:
+        path: /opt/devdata
+        state: directory
+        mode: 0775
