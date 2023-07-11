@@ -1,6 +1,8 @@
 ---
 - name: Gathering facts from setup module
   hosts: all
+  gathering_facts: false
   tasks:
-  - debug: 
-      var: ansible.distribution
+  - name: Print OS name
+    debug: 
+      var: ansible_distribution
