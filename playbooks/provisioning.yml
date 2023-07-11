@@ -1,6 +1,6 @@
 ---
-- name: provision files, templates and content
-  host: all
+- name: 
+  hosts: all
   become: yes
   tasks:
     - name: Banner file /etc/motd
