@@ -5,8 +5,8 @@ dbpass: 4realto
 USRNM: commonUser
 COMM: This variable is coming from the grouped 
 
-Usernames:
- - user01
- - user02
- - user03
- - user04
+usernames:
+  - user01
+  - user02
+  - user03
+  - user04
