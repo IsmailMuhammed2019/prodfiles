@@ -7,6 +7,10 @@
     dbpass: tesla
 
   tasks:
+    - debug: 
+        msg: "The name of the db is {{dbname}}"
+    - debug:
+        var: dbuser
     - name: install mariadb
       yum: 
         name: mariadb-server
