@@ -1,0 +1,6 @@
+---
+- name: Gathering facts from setup module
+  hosts: all
+  tasks:
+  - debug: 
+      var: ansible.distribution
