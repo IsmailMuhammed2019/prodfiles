@@ -2,5 +2,5 @@ dbname: fashion
 dbuser: tailor
 dbpass: 4realto
 
-USRNM: ismail
-COMM: The best devOps Engineer ever
+USRNM: commonUser
+COMM: This variable is coming from the grouped variables
