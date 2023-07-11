@@ -1,0 +1,42 @@
+---
+- name: Setting conditional decisions to install apps on the servers
+  hosts: all
+  become: yes
+  tasks:
+  - name: Install NTP on centos
+    yum:
+      name: ntp
+      state: present
+    when: ansible_distribution == "CentOS"
+    loop:
+      - ntp
+      - wget
+      - git
+      - zip
+      - unzip
+
+  - name: install NTP on Ubuntu
+    apt:
+      name: ntp
+      state: present
+    when: ansible_distribution == "Ubuntu"
+    loop:
+      - ntp
+      - wget
+      - git
+      - zip
+      - unzip
+
+  - name: Start & enable NTP on Redhat
+    service:
+      name: ntpd
+      state: started
+      enabled: yes
+    when: ansible_os_family == "RedHat"
+
+  - name: Start & enable NTP on Debian
+    service:
+      name: ntp
+      state: started
+      enabled: yes
+    when: ansible_os_family == "Debian"
