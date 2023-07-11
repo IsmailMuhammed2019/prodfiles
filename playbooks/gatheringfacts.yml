@@ -13,7 +13,7 @@
 
   - name: Print RAM memory
     debug: 
-      var: ansible_memory_mb.real.
+      var: ansible_memory_mb.real.free
       
   - name: Print Processor name
     debug: 
