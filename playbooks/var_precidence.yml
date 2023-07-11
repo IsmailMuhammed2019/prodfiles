@@ -12,6 +12,8 @@
         comment: "{{COMM}}"
       register: usrout
 
-    - name: print out the user output
-      debug: 
-        var: usrout
+    - debug: 
+        var: usrout.name
+
+    - debug: 
+        var: usrout.comment
