@@ -6,3 +6,15 @@
   - name: Print OS name
     debug: 
       var: ansible_distribution
+
+  - name: Print Selinux mode
+    debug: 
+      var: ansible_selinux.mode
+
+  - name: Print RAM memory
+    debug: 
+      var: ansible_memory_mb.real.
+      
+  - name: Print Processor name
+    debug: 
+      var: ansible_processor[2]
