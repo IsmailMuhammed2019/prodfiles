@@ -39,3 +39,8 @@
         password: "{{dbpass}}"
         priv: '*.*:ALL'
         state: present
+      register: dbout
+
+    - name: print out the output of dbuser
+      debug:
+        var: dbout
