@@ -2,9 +2,9 @@
 - name: Create user on all hosts
   hosts: all
   become: yes
-  vars: 
-    USRNM: playUser
-    COMM: variable from playbook
+  # vars: 
+  #   USRNM: playUser
+  #   COMM: variable from playbook
   tasks: 
     - name: create user
       user:
