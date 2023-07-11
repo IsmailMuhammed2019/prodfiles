@@ -1,0 +1,9 @@
+---
+- name: Banner file /etc/motd
+  host: all
+  become: yes
+  tasks:
+    - name: Banner file /etc/motd
+      copy: 
+        content: "This {{ansible_distribution}} is managed by Ansible. \n"
+        dest: /etc/motd
