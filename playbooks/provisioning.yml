@@ -13,7 +13,16 @@
         src: ../templates/ntp_redhat.conf.j2
         dest: /etc/ntp.conf
       when: ansible_os_family == "RedHat"
+      notify: 
+        - Restart NTP on RedHat
 
+    - name: Dir for dev data
+      file:
+        path: /opt/devdata
+        state: directory
+        mode: 0775
+        
+  handlers:
     - name: Restart NTP on RedHat
       service: 
         name: ntpd
@@ -21,8 +30,4 @@
         enabled: yes
       when: ansible_os_family == "RedHat"
 
-    - name: Dir for dev data
-      file:
-        path: /opt/devdata
-        state: directory
-        mode: 0775
+    
