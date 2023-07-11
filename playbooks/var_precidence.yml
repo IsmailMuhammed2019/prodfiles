@@ -2,6 +2,7 @@
 - name: Create user on all hosts
   hosts: all
   become: yes
+  gather_facts: false
   # vars: 
   #   USRNM: playUser
   #   COMM: variable from playbook
