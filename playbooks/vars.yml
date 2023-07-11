@@ -1,10 +1,10 @@
 - name: setup DB server
   hosts: dbservers
   become: yes
-  vars:
-    dbname: electric
-    dbuser: current
-    dbpass: tesla
+  # vars:
+  #   dbname: electric
+  #   dbuser: current
+  #   dbpass: tesla
 
   tasks:
     - debug: 
