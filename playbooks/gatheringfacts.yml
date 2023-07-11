@@ -1,7 +1,7 @@
 ---
 - name: Gathering facts from setup module
   hosts: all
-  gathering_facts: false
+  gather_facts: false
   tasks:
   - name: Print OS name
     debug: 
